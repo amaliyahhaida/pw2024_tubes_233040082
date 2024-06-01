@@ -10,7 +10,7 @@ if($_SESSION['status_login'] != true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APOTEK</title>
+    <title>HEALTHCARE</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
@@ -18,7 +18,7 @@ if($_SESSION['status_login'] != true) {
     <!-- header -->
     <header>
         <div class="container">
-        <h1><a href="dashboard.php">Apotek</a></h1>
+        <h1><a href="dashboard.php">Healthcare</a></h1>
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
@@ -34,7 +34,7 @@ if($_SESSION['status_login'] != true) {
         <div class="container">
             <h3>Data Produk</h3>
             <div class="box">
-                <p><a href="tambah-Produk.php">Tambah data</a></p>
+                <p><a href="tambah-Produk.php" class="btn btn-primary">Tambah data</a></p>
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
@@ -42,9 +42,9 @@ if($_SESSION['status_login'] != true) {
                             <th>Kategori</th>
                             <th>Nama Produk</th>
                             <th>Harga</th>
-                            <th>Deskripsi</th>
+                            <th>Gambar</th>
                             <th>Status</th>
-                            <th width="150px">Aksi</th>
+                            <th width="170px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,7 +60,6 @@ if($_SESSION['status_login'] != true) {
                             <td><?php echo $row['category_name'] ?></td>
                             <td><?php echo $row['product_name'] ?></td>
                             <td>Rp. <?php echo number_format($row['product_price']) ?></td>
-                            <td><?php echo $row['product_description'] ?></td>
                             <td><a href="produk/<?php echo $row['product_image']?>" target="_blank"> <img src="produk/<?php echo $row['product_image']?>" width="50px"> </a></td>
                             <td><?php echo ($row['product_status'] == 0)? 'Tidak Aktif':'Aktif'; ?></td>
                             <td>
@@ -82,7 +81,7 @@ if($_SESSION['status_login'] != true) {
     <!--footer-->
     <footer>
         <div class="container">
-            <small>Copyright &copy; 2024 - apotek.</small>
+            <small>Copyright &copy; 2024 - Healthcare.</small>
         </div>
     </footer>
 </body>

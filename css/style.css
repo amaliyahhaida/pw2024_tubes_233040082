@@ -16,6 +16,7 @@ a {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: url(../img/bg.jpg);
 }
 .box-login {
     width: 300px;
@@ -37,13 +38,13 @@ a {
 }
 .btn {
     padding: 8px 15px;
-    background-color: #00c724;
+    background-color: green;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 header {
-    background-color: #00c724;
+    background-color: green;
     color: #fff;
 }
 header h1 {
@@ -171,4 +172,49 @@ footer {
 .footer small {
   margin-top: 25px;
   display: inline-block;
+}
+
+.col-2 {
+  width: 50%;
+  min-height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.col-2 img {
+  border: 1px solid #f9f9f9;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.col-2 h3 {
+  margin-bottom: 10px;
+}
+
+.col-2 h4  {
+  color: green;
+}
+.col-2 p {
+  margin: 15px 0;
+  text-align: justify;
+  line-height: 25px;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px){
+  .container {
+    width: 90%;
+  }
+  .col-5 {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  .col-4 {
+    width: 50%;
+    height: 300px;
+  }
+  .col-2 {
+    width: 100%;
+  }
 }

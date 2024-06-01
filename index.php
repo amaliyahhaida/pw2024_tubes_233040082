@@ -9,14 +9,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APOTEK</title>
+    <title>HEALTHCARE</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <!-- header -->
     <header>
         <div class="container">
-        <h1><a href="index.php">Apotek</a></h1>
+        <h1><a href="index.php">HealthCare</a></h1>
         <ul>
             <li><a href="produk.php">Produk</a></li>
         </ul>
@@ -63,7 +63,7 @@
             <h3>Produk terbaru</h3>
             <div class="box">
                 <?php 
-                    $produk = mysqli_query($conn, "SELECT * FROM tb_product ORDER BY product_id DESC
+                    $produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_status = 1 ORDER BY product_id DESC
                         LIMIT 8");
                         if(mysqli_num_rows($produk) > 0){
                             while($p = mysqli_fetch_array($produk)){
@@ -72,7 +72,7 @@
                         <div class="col-4">
                             <img src="produk/<?php echo $p['product_image'] ?>">
                             <p class="nama"><?php echo $p['product_name'] ?></p>
-                            <p class="harga">Rp. <?php echo $p['product_price'] ?></p>
+                            <p class="harga">Rp. <?php echo number_format($p['product_price']) ?></p>
                         </div>
                     </a>
                 <?php }}else{ ?>
@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- footer -->
     <div class="footer">
         <div class="container">

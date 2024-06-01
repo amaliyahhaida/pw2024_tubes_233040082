@@ -16,14 +16,14 @@ if($_SESSION['status_login'] != true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APOTEK</title>
+    <title>HealthCare</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <!-- header -->
     <header>
         <div class="container">
-        <h1><a href="dashboard.php">Apotek</a></h1>
+        <h1><a href="dashboard.php">HealthCare</a></h1>
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
@@ -136,7 +136,7 @@ if($_SESSION['status_login'] != true) {
     <!--footer-->
     <footer>
         <div class="container">
-            <small>Copyright &copy; 2024 - apotek.</small>
+            <small>Copyright &copy; 2024 - HealthCare.</small>
         </div>
     </footer>
 </body>

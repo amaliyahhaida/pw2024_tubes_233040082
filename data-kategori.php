@@ -10,14 +10,15 @@ if($_SESSION['status_login'] != true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APOTEK</title>
+    <title>HEALTHCARE</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
     <!-- header -->
     <header>
         <div class="container">
-        <h1><a href="dashboard.php">Apotek</a></h1>
+        <h1><a href="dashboard.php">HealtCare</a></h1>
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
@@ -33,13 +34,13 @@ if($_SESSION['status_login'] != true) {
         <div class="container">
             <h3>Data Kategori</h3>
             <div class="box">
-                <p><a href="tambah-kategori.php">Tambah data</a></p>
+            <p><a href="tambah-kategori.php" class="btn btn-primary mt-2">Tambah data</a></p>
                 <table border="1" cellspacing="0" class="table">
                     <thead>
                         <tr>
                             <th width="60px">No</th>
                             <th>Kategori</th>
-                            <th width="150px">Aksi</th>
+                            <th width="170px">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,8 +54,8 @@ if($_SESSION['status_login'] != true) {
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['category_name'] ?></td>
                             <td>
-                                <a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>">Edit</a> || <a href="
-                                proses-hapus.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('Yakin ingin hapus ?')">Hapus</a>
+                                <a href="edit-kategori.php?id=<?php echo $row['category_id'] ?>" class="btn btn-primary" >Edit</a> || <a href="
+                                proses-hapus.php?idk=<?php echo $row['category_id'] ?>" onclick="return confirm('Yakin ingin hapus ?')" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
                         <?php }}else{ ?>
@@ -73,7 +74,7 @@ if($_SESSION['status_login'] != true) {
     <!--footer-->
     <footer>
         <div class="container">
-            <small>Copyright &copy; 2024 - apotek.</small>
+            <small>Copyright &copy; 2024 - HealtCare.</small>
         </div>
     </footer>
 </body>
