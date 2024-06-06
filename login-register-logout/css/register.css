@@ -1,0 +1,100 @@
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+html,
+body {
+  height: 100%;
+  background: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+.global-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  border-radius: 20px;
+}
+.login-form {
+  width: 500px;
+  height: 600px;
+  padding: 20px;
+  background-color: white !important;
+  color: black !important;
+  margin: 0;
+}
+
+.card-title {
+  font-weight: 900;
+  padding-top: 25px;
+  color: green;
+}
+
+.btn {
+  background: green !important;
+  color: white !important;
+  transform: translate(10px);
+  font-size: 14px;
+  border-radius: 50px !important;
+  margin: 10px 10px 10px -10px;
+}
+
+.fullname {
+  width: 100% !important;
+}
+
+.first-name {
+  width: 50%;
+}
+
+.last-name {
+  width: 50%;
+}
+
+/* responsive */
+@media screen and (max-width: 500px) {
+  .login-form {
+    /* margin-left: 20px;
+      margin-right: 20px; */
+    transform: scale(0.8);
+  }
+
+  body {
+    background-position-x: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login-form {
+    /* margin-left: 20px;
+      margin-right: 20px; */
+    transform: scale(0.8);
+  }
+
+  body {
+    background-position-x: center;
+  }
+}
+@media screen and (max-width: 990px) {
+  .login-form {
+    /* margin-left: 20px;
+      margin-right: 20px; */
+    transform: scale(0.8);
+  }
+
+  body {
+    background-position-x: center;
+  }
+}
+@media screen and (max-width: 1001px) {
+  .login-form {
+    /* margin-left: 20px;
+      margin-right: 20px; */
+    transform: scale(0.8);
+  }
+
+  body {
+    background-position-x: center;
+  }
+}

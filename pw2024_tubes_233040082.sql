@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 27, 2024 at 09:49 AM
+-- Generation Time: Jun 06, 2024 at 09:40 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -24,124 +24,139 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_admin`
+-- Table structure for table `kategori`
 --
 
-CREATE TABLE `tb_admin` (
-  `admin_id` int NOT NULL,
-  `admin_name` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `admin_telp` varchar(20) NOT NULL,
-  `admin_email` varchar(50) NOT NULL,
-  `admin_address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `kategori` (
+  `id` int NOT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_admin`
+-- Dumping data for table `kategori`
 --
 
-INSERT INTO `tb_admin` (`admin_id`, `admin_name`, `username`, `password`, `admin_telp`, `admin_email`, `admin_address`) VALUES
-(1, 'Amaliyah', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '085862904637', 'amaliyahnurhaida@gmail.com', 'Ciwidey');
+INSERT INTO `kategori` (`id`, `nama`) VALUES
+(1, 'PROMO'),
+(2, 'OBAT PIL'),
+(3, 'OBAT SIRUP'),
+(4, 'OBAT TABLET'),
+(5, 'SUPLEMEN'),
+(6, 'OBAT KAPSUL'),
+(7, 'OBAT HERBAL'),
+(8, 'ALAT KESEHATAN'),
+(9, 'OBAT OLES');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_category`
+-- Table structure for table `produk`
 --
 
-CREATE TABLE `tb_category` (
-  `category_id` int NOT NULL,
-  `category_name` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `produk` (
+  `id` int NOT NULL,
+  `kategori_id` int NOT NULL,
+  `nama` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `harga` decimal(10,3) NOT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `detail` text COLLATE utf8mb4_general_ci,
+  `ketersediaan_stok` enum('habis','tersedia') COLLATE utf8mb4_general_ci DEFAULT 'tersedia'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_category`
+-- Dumping data for table `produk`
 --
 
-INSERT INTO `tb_category` (`category_id`, `category_name`) VALUES
-(11, 'Sirup'),
-(12, 'Pil'),
-(13, 'Tablet'),
-(14, 'Obat Tetes'),
-(15, 'Obat Oles');
+INSERT INTO `produk` (`id`, `kategori_id`, `nama`, `harga`, `foto`, `detail`, `ketersediaan_stok`) VALUES
+(15, 1, 'Valtrex 500mg Tablet', '35.000', '666173a43566f.jpeg', 'Valtrex merupakan obat yang digunakan untuk mengobati penyakit akibat infeksi virus seperti herpes pada pasien dengan gangguan sistem imun. Valtrex mengandung zat aktif Valaciclovir adalah suatu antivirus yang bekerja dengan menghambat polymerase DNA secara kompetitif di dalam DNA virus setelah diaktifkan dalam bentuk Acyclovir trifosfat. Bentuk aktif ini akan menghambat sintesis DNA dengan bertindak sebagai penutup jalur (Backbone) rantai DNA.', 'tersedia'),
+(17, 8, 'TERMOMETER DIGITAL MULTIFUNGSI BEURER FT 65', '800.000', '6661699e5d1b5.jpg', 'Beurer FT65 adalah alat ukur suhu yang mempunyai beberapa keunggulan : 1. Hasil pengukuran suhu badan yang akurat melalui telinga ataupun dahi (kontak) 2. Hasil pengukuran yang cepat, hanya 1 detik 3. Dapat juga digunakan untuk mengukur suhu permukaan benda dan cairan. 4. Teknologi Infrared 5. Layar tampilan juga menunjukkan waktu dan tanggal 6. Menyimpan 10 hasil pengukuran terakhir 7. Alarm visual suhu > 38⁰ C 8. Layar tampilan yang besar sehingga mempermudah pembacaan hasil pengukuran 9. Bentuk yang nyaman, cocok untuk seluruh anggota keluarga 10. Otomatis off jika tidak dipergunakan beberapa saat 11. Hasil pengukuran bisa ditampilkan dalam pilihan ⁰C ataupun ⁰F', 'tersedia'),
+(18, 5, 'Enervon C', '44.000', '66617202d136a.jpg', 'Enervon C adalah suplemen yang bermanfaat untuk membantu menjaga daya tahan tubuh. Suplemen multivitamin ini mengandung kombinasi vitamin C dengan vitamin B kompleks.\r\nSelain menjaga daya tahan tubuh, Enervon C juga dapat digunakan untuk membantu mengatasi kekurangan vitamin dan mempercepat pemulihan setelah sakit.', 'tersedia'),
+(19, 1, 'Bisolvon 8 mg 10 Tablet', '35.000', '66616aab36ae6.jpg', 'Bisolvon merupakan obat yang digunakan untuk mengurangi dan mengencerkan dahak pada saluran pernapasan. Bisolvon mengandung zat aktif Bromhexin HCl yang bekerja sebagai iritan pada saluran pernafasan di mana saat batuk, volume mukus ditingkatkan pada saluran napas serta menurunkan viskositasnya (menjadi lebih encer) sehingga dahak/lendir lebih mudah dikeluarkan dari saluran pernapasan. Fungsi Bromhexin HCl adalah ekspektoran yang dapat mengencerkan dahak atau lendir pada saluran pernafasan sehingga lebih mudah dikeluarkan bersamaan dengan batuk.', 'tersedia'),
+(23, 3, 'Woods Att Sirup 60ml (per Botol)', '25.000', '66616efca984c.jpg', 'Woods Antitusive merupakan obat yang digunakan untuk meringankan rasa batuk tidak berdahak yang disebabkan oleh alergi pada saluran pernapasan bagian atas.\r\n', 'tersedia'),
+(24, 4, 'Ponstan 500 mg 10 Tablet', '40.000', '66617040d3513.jpeg', 'Ponstan adalah obat yang mengandung Asam Mefenamat digunakan sebagai pereda nyeri, dismenore, nyeri ringan khususnya ketika pasien juga mengalami peradangan, dan mengurangi gangguan inflamasi (peradangan) secara umum. Asam Mefenamat termasuk dalam golongan Nonsteroidal Anti-Inflammatory Drug (NSAID) yang memiliki mekanisme kerja dalam mengatasi nyeri sebagai berikut: Menghambat kerja dari enzim siklooksigenasi (COX) dimana enzim ini berfungsi dalam membantu pembentukan prostaglandin saat terjadinya luka dan menyebabkan rasa sakit serta peradangan. Ketika kerja enzim COX terhalangi, maka produksi prostaglandin lebih sedikit, sehingga rasa sakit dan peradangan akan berkurang.', 'tersedia'),
+(25, 6, 'Mecobalamin Novell 500mcg Kapsul', '12.000', 'kapsull.jpg', 'MECOBALAMIN 500 MCG KAPSUL adalah obat generik yang merupakan satu bentuk kimiawi-nya berupa co-enzyme dari B12. Obat ini digunakan untuk mengobati neuropati perifer (saraf tepi) dan anemia megaloblastik yang disebabkan oleh defisiensi vitamin B12. Dalam penggunaan obat ini HARUS SESUAI DENGAN PETUNJUK DOKTER.', 'tersedia'),
+(26, 9, 'Benoson N Cream 5 g', '25.000', 'benoson.jpg', 'BENOSON N CREAM adalah obat oles yang mengandung Betamethasone 0.1% dan Neomycin sulfate 0.5%. Obat ini digunakan untuk meredakan peradangan dan alergi kulit yang disertai dengan adanya infeksi. Obat ini digunakan dengan cara mengoleskan obat pada wilayah yang infeksi sebanyak 2-3 kali per hari.', 'tersedia'),
+(27, 8, 'Tensimeter ', '250.000', 'alat tensi.jpg', 'Tensimeter atau sfigmomanometer merupakan alat yang digunakan untuk mengukur tekanan darah. Alat yang selalu ada di ruang praktek dokter ini bisa digunakan di rumah, terutama jika Anda perlu melakukan pemeriksaan tekanan darah rutin. Dengan adanya tensimeter di rumah, pasien tidak perlu bolak-balik mengantre di rumah sakit atau tempat praktek dokter untuk memeriksakan tekanan darahnya.', 'tersedia');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_product`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `tb_product` (
-  `product_id` int NOT NULL,
-  `category_id` int NOT NULL,
-  `product_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `product_price` int NOT NULL,
-  `product_description` text NOT NULL,
-  `product_image` varchar(100) NOT NULL,
-  `product_status` varchar(255) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `role` enum('admin','user') COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_product`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `tb_product` (`product_id`, `category_id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_status`, `date_created`) VALUES
-(5, 14, 'Betadine', 17000, 'Obat luka', 'produk1716651647.jpg', '1', '2024-05-25 15:40:47'),
-(6, 13, 'Tremenza', 23000, 'Meringankan gejala flu', 'produk1716651689.jpg', '1', '2024-05-25 15:41:29'),
-(7, 11, 'Woods', 28000, 'Obat Batuk berdahak', 'produk1716651723.jpg', '1', '2024-05-25 15:42:03'),
-(8, 12, 'Vermint', 22000, 'tipes, demam tinggi, migrain, sakit kepala terus menerus\r\n  ', 'produk1716799833.jpg', '1', '2024-05-25 15:46:24'),
-(9, 13, 'Ponstan', 38000, 'meringankan gejala nyeri atau ngilu akibat sakit gigi', 'produk1716728291.jpg', '1', '2024-05-26 12:58:11'),
-(10, 11, 'Sanmol sirup', 22000, 'meringankan rasa sakit pada keadaan sakit kepala, sakit gigi dan menurunkan demam', 'produk1716728503.jpg', '1', '2024-05-26 13:01:43'),
-(11, 15, 'Benoson N Cream', 25000, ' meredakan peradangan dan alergi kulit yang disertai dengan adanya infeks', 'produk1716798114.jpg', '1', '2024-05-27 08:21:54'),
-(12, 14, 'Insto Cool Eye Drop', 20000, 'obat tetes mata untuk mengatasi mata merah dan perih akibat paparan debu, asap, dan polusi', 'produk1716800003.png', '1', '2024-05-27 08:53:23'),
-(13, 14, 'Rohto Dryfresh', 19000, 'mengatasi mata kering dan mencegah iritasi akibat kurangnya produksi air mata', 'produk1716802536.jpg', '1', '2024-05-27 09:35:36');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `password`, `role`) VALUES
+(6, 'admin', 'admin', 'admin', '$2y$10$zgVcdAIH5opPZIOfdHzzOOvvvDYXaL27EiQss06BQ/e9FqY5I5nyu', 'admin'),
+(8, 'ama', 'liyah', 'amaaa', '$2y$10$UL8cFYENR7LrMPyQSabVxuH5l4J20a6GHqBzs3k9t.gJ0xCJd.666', 'user'),
+(9, 'hydan', 'ali', 'ali', '$2y$10$ELrMxk8SEzeoUzFjwJbEw.TTCl6E/2sabmzwgxuuNtrZIeHQPY3.q', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_admin`
+-- Indexes for table `kategori`
 --
-ALTER TABLE `tb_admin`
-  ADD PRIMARY KEY (`admin_id`);
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_category`
+-- Indexes for table `produk`
 --
-ALTER TABLE `tb_category`
-  ADD PRIMARY KEY (`category_id`);
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nama` (`nama`),
+  ADD KEY `kategori_produk` (`kategori_id`);
 
 --
--- Indexes for table `tb_product`
+-- Indexes for table `users`
 --
-ALTER TABLE `tb_product`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `category_id` (`category_id`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `tb_admin`
+-- AUTO_INCREMENT for table `kategori`
 --
-ALTER TABLE `tb_admin`
-  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `kategori`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tb_category`
+-- AUTO_INCREMENT for table `produk`
 --
-ALTER TABLE `tb_category`
-  MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `produk`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `tb_product`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `tb_product`
-  MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `produk`
+--
+ALTER TABLE `produk`
+  ADD CONSTRAINT `kategori_produk` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`) ON DELETE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
