@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ps-4">
                 <li class="nav-item nav-a">
-                    <a class="nav-link " href="../adminpanel">Home</a>
+                    <a class="nav-link " href="../adminpanel/index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="kategori.php">Kategori</a>

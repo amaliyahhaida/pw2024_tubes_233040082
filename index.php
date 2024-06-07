@@ -5,7 +5,7 @@ $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
 $tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama AS nama_kategori, p.nama AS nama_brg, p.id AS id_produk
                               FROM produk p
                               JOIN kategori k ON p.kategori_id = k.id
-                              WHERE ketersediaan_stok = 'tersedia'");
+                              WHERE ketersediaan_stok = 'tersedia' ORDER BY p. `harga` DESC");
 
 $data_produk = [];
 while ($row = mysqli_fetch_assoc($tampil)) {
@@ -95,11 +95,10 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
             <h3>Tentang Kami</h3>
             <p class="fs-7 mt-5">Health Care adalah sebuah situs web jual obat yang didedikasikan untuk menyediakan akses mudah dan aman bagi pengguna yang ingin membeli obat-obatan secara online. Dengan fokus pada kesehatan dan kesejahteraan, Health Care menawarkan berbagai macam obat-obatan dari berbagai kategori, mulai dari obat resep hingga obat bebas yang umum digunakan.
                 <br>
-                Web Health Care memiliki antarmuka yang intuitif dan mudah digunakan, memungkinkan pengguna untuk dengan cepat mencari dan menemukan produk yang mereka butuhkan. Di dalam situs, pengguna dapat menemukan deskripsi lengkap tentang setiap obat, termasuk informasi dosis, petunjuk penggunaan, efek samping yang mungkin terjadi, dan peringatan penting.
+                Web Health Care memiliki antarmuka yang sederhana dan mudah digunakan, memungkinkan pengguna untuk dengan cepat mencari dan menemukan produk yang mereka butuhkan. Di dalam situs, pengguna dapat menemukan deskripsi lengkap tentang setiap obat.
             </p>
         </div>
     </div>
-
 
 
     <!-- produk -->
@@ -128,14 +127,14 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
                     </div>
                 <?php endforeach; ?>
             </div>
-            <a class="btn btn-warning m-3" href="produk.php" style="color: white;">See More</a>
+            <a class="btn btn-primary m-3" href="produk.php" style="color: white;">See More</a>
         </div>
     </div>
 
     <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>Maps</h2>
+        <h2>Lokasi Kami</h2>
         <!-- Map container -->
         <div class="map-container">
             <div class="mapBg"></div>
@@ -145,11 +144,11 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
             </div>
       </div>
       <div class="col-md-6">
-        <h2>Contact Us</h2>
+        <h2>Kontak</h2>
         <!-- Contact Form -->
         <form action="process_form.php" method="post">
           <div class="form-group">
-            <label for="name">Name :</label>
+            <label for="name">Nama :</label>
             <input type="text" class="form-control" id="name" name="name" required>
           </div>
           <div class="form-group">
@@ -157,10 +156,10 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
             <input type="email" class="form-control" id="email" name="email" required>
           </div>
           <div class="form-group">
-            <label for="message">Message :</label>
+            <label for="message">Pesan :</label>
             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn-warning mt-3">Submit</button>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
       </div>
     </div>

@@ -4,7 +4,7 @@
         <div class="icon-medsos text-primary d-flex justify-content-center " style=" font-size: 30px !important; ">
             <div class="col-sm-1 d-flex justify-content-center mb-2 ">
 
-                <a href="#" class="warna1-2 "><i class="fa-brands fa-facebook "></i></a>
+                <a href="https://www.facebook.com/share/hkGiqdhzwGnY7wrE/?mibextid=qi2Omg" class="warna1-2 "><i class="fa-brands fa-facebook "></i></a>
             </div>
             <div class="col-sm-1 d-flex justify-content-center mb-2">
 
@@ -12,7 +12,7 @@
             </div>
             <div class="col-sm-1 d-flex justify-content-center mb-2">
 
-                <a href="#" class="warna1-2"><i class="fa-brands fa-twitter "></i></a>
+                <a href="https://x.com/ama2xz_" class="warna1-2"><i class="fa-brands fa-twitter "></i></a>
             </div>
         </div>
     </div>

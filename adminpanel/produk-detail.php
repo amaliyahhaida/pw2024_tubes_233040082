@@ -6,7 +6,7 @@ require "../koneksi.php";
 $id = $_GET["id"];
 
 // query data barang berdasarkan id
-$query = "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.id as id_produk
+$query = "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.harga as harga_barang, p.id as id_produk
 FROM produk p
 JOIN kategori k ON p.kategori_id = k.id WHERE p.id = $id";
 $result = mysqli_query($con, $query);
@@ -200,7 +200,7 @@ function uploadImage()
                             <input type="text" name="kategori_id" id="kategori_id" class="form-control py-3" value="<?= $tampil['nama_kategori']; ?>">
                             <select name="kategori_id" id="kategori_id" class="form-control" required>
                                     <option value="1">PROMO</option>
-                                    <option value="2">OBAT PIL</option>
+                                    <option value="2">OBAT TETES</option>
                                     <option value="3">OBAT SIRUP</option>
                                     <option value="4">OBAT TABLET</option>
                                     <option value="5">SUPLEMEN</option>
@@ -228,7 +228,7 @@ function uploadImage()
                     </div>
                     <div class="d-flex justify-content-around mt-3">
                         <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
-                        <button type="submit" class="btn btn-danger" name="delete" onclick="return confirm('Yakin ?');">Hapus</button>
+                        <button type="submit" class="btn btn-danger" name="delete" onclick="return confirm('Yakin Mau dihapus ?');">Hapus</button>
                     </div>
                 </form>
             </div>

@@ -3,7 +3,7 @@ require 'session-admin.php';
 require "../koneksi.php";
 
 $queryKategori = mysqli_query($con, "SELECT * FROM kategori");
-$tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.id as id_produk
+$tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.harga as harga_barang, p.id as id_produk
 FROM produk p
 JOIN kategori k ON p.kategori_id = k.id");
 
@@ -94,7 +94,6 @@ $jumlah = 0;
 <style>
     form div {
         margin-bottom: 10px;
-
     }
 
     .print img {
@@ -145,7 +144,7 @@ $jumlah = 0;
                     <select name="kategori_id" id="kategori_id" class="form-control" required>
                         <option value="">-Pilih salah satu-</option>
                         <option value="1">PROMO</option>
-                        <option value="2">OBAT PIL</option>
+                        <option value="2">OBAT TETES</option>
                         <option value="3">OBAT SIRUP</option>
                         <option value="4">OBAT TABLET</option>
                         <option value="5">SUPLEMEN</option>
@@ -221,7 +220,7 @@ $jumlah = 0;
                                     <td><img src="../img/<?= $t['foto']; ?>" alt="" class="foto-print"></td>
                                     <td><?php echo $t['nama_brg'] ?></td>
                                     <td><?php echo $t['nama_kategori'] ?></td>
-                                    <td><?php echo $t['harga'] ?></td>
+                                    <td><?php echo $t['harga_barang'] ?></td>
                                     <td class="<?php echo ($t['ketersediaan_stok'] == 'tersedia') ? 'text-success' : 'text-danger'; ?>">
                                         <?php echo $t['ketersediaan_stok']; ?>
                                     </td>

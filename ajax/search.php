@@ -3,9 +3,12 @@ require "../koneksi.php";
 
 $keyword = $_GET['keyword'];
 
-$queryProduk = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.id as id_produk
+$queryProduk = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama as nama_brg, p.harga as harga_barang, p.id as id_produk
 FROM produk p
-JOIN kategori k ON p.kategori_id = k.id WHERE p.nama LIKE '%$keyword%'OR k.nama LIKE '%$keyword%'");
+JOIN kategori k ON p.kategori_id = k.id WHERE p.nama LIKE '%$keyword%'OR 
+                                              k.nama LIKE '%$keyword%' OR
+                                              p.harga LIKE '%$keyword%' OR
+                                              ketersediaan_stok LIKE '%$keyword%'");
 $jumlah = 0;
 
 ?>
@@ -34,7 +37,7 @@ $jumlah = 0;
                         <td><img src="../img/<?= $t['foto']; ?>" alt="" class="foto-print"></td>
                         <td><?php echo $t['nama_brg'] ?></td>
                         <td><?php echo $t['nama_kategori'] ?></td>
-                        <td><?php echo $t['harga'] ?></td>
+                        <td><?php echo $t['harga_barang'] ?></td>
                         <td class="<?php echo ($t['ketersediaan_stok'] == 'tersedia') ? 'text-success' : 'text-danger'; ?>">
                             <?php echo $t['ketersediaan_stok']; ?>
                         </td>

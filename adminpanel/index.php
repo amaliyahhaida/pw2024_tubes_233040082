@@ -30,7 +30,7 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     <!-- icon -->
-    <link rel="shortcut icon" href="img/logo1.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo1.png" type="image/x-icon" />
     <title>Home</title>
 </head>
 

@@ -99,12 +99,11 @@ if (mysqli_num_rows($tampil) > 0) {
                         <p>
                             Status Ketersediaan : <strong><?= $result['ketersediaan_stok']; ?></strong>
                         </p>
-                            <a href="https://api.whatsapp.com/send?phone=62895405660901send?phone=&text=Hai, saya tertarik dengan produk Anda." target="_blank">
-                                <div class="alert alert-primary" role="alert">
-                                    Pesan Produk
-                                </div>
-                            </a>
-                    </div>
+                        <a href="https://api.whatsapp.com/send?phone=62895405660901&text=Halo%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank">
+                            <div class="alert alert-success" role="alert"><img src="img/wa.png" style=width:30px;>
+                                Pesan Produk 
+                            </div>
+                        </a>
                 <?php else : ?>
                     <div class="col-md-12">
                         <p>Data tidak ditemukan.</p>
