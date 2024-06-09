@@ -19,7 +19,7 @@ $tampil = mysqli_query($con, "SELECT p.*, k.*, k.nama as nama_kategori, p.nama a
 if (mysqli_num_rows($tampil) > 0) {
     $result = mysqli_fetch_assoc($tampil);
 } else {
-    echo "Data tidak ditemukan.";
+    echo "Data tidak ditemukan (Produk Habis/Tidak Tersedia).";
     exit;
 }
 
