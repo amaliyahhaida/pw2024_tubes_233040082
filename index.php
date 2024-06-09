@@ -131,7 +131,7 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="contact and maps">
     <div class="row">
       <div class="col-md-6">
         <h2>Lokasi Kami</h2>

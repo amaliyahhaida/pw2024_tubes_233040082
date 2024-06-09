@@ -17,6 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#produk">Produk</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php #contact and maps">Contact and Maps</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
