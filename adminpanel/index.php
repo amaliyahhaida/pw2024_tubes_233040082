@@ -34,22 +34,6 @@ $jumlahProduk = mysqli_num_rows($queryProduk);
     <title>Home</title>
 </head>
 
-<style>
-    .kotak {
-        border: solid 1px;
-    }
-
-    .summary-kategori {
-        background-color: #0000CD;
-        border-radius: 15px;
-    }
-
-    .summary-produk {
-        background-color: #32CD32;
-        border-radius: 15px;
-    }
-</style>
-
 <body>
     <?php require "navbar.php"; ?>
 
