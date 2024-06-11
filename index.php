@@ -130,7 +130,8 @@ while ($row = mysqli_fetch_assoc($queryKategori)) {
             <a class="btn btn-primary m-3" href="produk.php" style="color: white;">See More</a>
         </div>
     </div>
-
+    
+        <!-- Map and Contact -->
     <div class="container" id="contact and maps">
     <div class="row">
       <div class="col-md-6">
